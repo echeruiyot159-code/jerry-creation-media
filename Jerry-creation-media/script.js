@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
   if(mobileClose && mobileMenu){ mobileClose.addEventListener('click', ()=> { mobileMenu.classList.remove('active'); mobileMenu.setAttribute('aria-hidden','true'); }); }
   document.querySelectorAll('.mobile-menu a').forEach(a => a && a.addEventListener('click', ()=> { if(mobileMenu) mobileMenu.classList.remove('active'); }));
 
+  const menuBtn = document.querySelector('.menuBtn');
+  const menu = document.querySelector('.menu');
+
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+
+  
   // preloader
   window.addEventListener('load', ()=> { const pre = document.getElementById('preloader'); if(pre){ pre.style.opacity='0'; setTimeout(()=> pre.remove(),600); } });
 
@@ -76,3 +85,4 @@ document.addEventListener('DOMContentLoaded', ()=> {
     }
   });
 });
+
