@@ -82,15 +82,26 @@ html,body{height:100%;margin:0;font-family:"Poppins",system-ui,-apple-system,"Se
   position: fixed;
   top: 0;
   right: -100%;
-  width: 70%;
+  width: 65%; /* reduce from 70% (or 100%) to 60–70% */
+  max-width: 320px; /* prevents it from becoming too wide on large screens */
   height: 100%;
   background: white;
   box-shadow: -4px 0 10px rgba(0,0,0,0.2);
   padding: 40px 20px;
   transition: right 0.3s ease;
   z-index: 2000;
+  overflow-y: auto; /* prevents cut off content */
 }
 
 .mobile-menu.open {
   right: 0;
 }
+body.dark .mobile-menu {
+  background: #111;
+  color: white;
+}
+
+body.dark .mobile-menu a {
+  color: #00eaff;
+}
+
